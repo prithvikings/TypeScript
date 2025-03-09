@@ -113,22 +113,30 @@ let undefinedValue: undefined;
 
 
 
-//Interfaces and Type Aliases
+//Interfaces
 // Defining an interface
 // using interfaces to define the shape of an object.
 // Extending an interface
-// Type aliases
-// Intersection types
+
 
 interface User{
     name: string;
     age: number;
     email: string;
     password: string;
+    gender?: string; //optional property
 }
 
-function registerUser(user: User){
-    console.log(user);
+interface Admin extends User{
+    admin: boolean;
+}
+
+function registerUser(user: User): void {
+    console.log(`${user.email} is registered.`);
+}
+
+function abcd(user: Admin): void {
+    console.log(`${user.name} is registered.`);
 }
 
 registerUser({
@@ -137,3 +145,53 @@ registerUser({
     email: "john@gmail.com",
     password: "john@123"
 });
+
+abcd({
+    name: 'John',
+    age: 30,
+    email: "karl@123",
+    admin: true,
+    password: "john@123"
+});
+
+// Type aliases
+//Type aliases are a way to give a type a name. You can use type aliases to define complex types that are used multiple times in your code.
+//Type aliases are similar to interfaces, but they are more flexible. You can use type aliases to define union types, intersection types, and other complex types.
+type value= string | number| boolean;
+let val: value = 'hello';
+val = 5;//ok
+val = true;//ok
+//val = [];//error
+
+type arg = string | number;
+function display(obj: arg): void {
+    console.log(obj);
+}
+display('hello');
+display(5);
+// display(true); error
+
+
+//Union types
+//Union types allow you to combine two or more types into a single type.
+//You can use union types to define variables that can hold values of different types.
+//You can use the pipe (|) character to separate the types in a union type.
+let union: string | number;
+union = 'hello';
+union = 5;
+//union = true; error
+
+//// Intersection types
+//Intersection types allow you to combine multiple types into a single type.
+//You can use intersection types to define variables that have all the properties of two or more types. 
+//You can use the ampersand (&) character to separate the types in an intersection type.
+interface A {
+    prop1: number;
+}
+interface B {
+    prop2: number;
+}
+let intersection: A & B;
+intersection = { prop1: 5, prop2: 10 };
+//intersection = { prop1: 5 }; error
+//intersection = { prop2: 10 }; error
