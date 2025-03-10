@@ -8,6 +8,7 @@
 // getter and setter
 // static properties 
 // abstract classes and methods
+
 class BottleMake {
     constructor(public name: string, public price: number, public capacity: String) {
         if(!capacity){
