@@ -100,7 +100,7 @@ This repository contains everything I've learned and built using TypeScript. It 
    node dist/index.js
    ```
 
-## 🎯 What You’ll Build
+## 🎯 What I have Added
 - TypeScript fundamentals projects
 - Practical coding exercises
 - Real-world TypeScript applications
