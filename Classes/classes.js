@@ -1,3 +1,4 @@
+"use strict";
 //classes and objects
 // class defination
 // constructor
@@ -8,8 +9,12 @@
 // getter and setter
 // static properties 
 // abstract classes and methods
-var BottleMake = /** @class */ (function () {
-    function BottleMake(name, price, capacity) {
+Object.defineProperty(exports, "__esModule", { value: true });
+class BottleMake {
+    name;
+    price;
+    capacity;
+    constructor(name, price, capacity) {
         this.name = name;
         this.price = price;
         this.capacity = capacity;
@@ -17,9 +22,9 @@ var BottleMake = /** @class */ (function () {
             this.capacity = "500ml";
         }
     }
-    return BottleMake;
-}());
-var bottle = new BottleMake("Bisleri", 20, "500ml");
-var bottle1 = new BottleMake("Kinley", 15, "");
+}
+let bottle = new BottleMake("Bisleri", 20, "500ml");
+let bottle1 = new BottleMake("Kinley", 15, "");
 console.log(bottle);
 console.log(bottle1);
+//# sourceMappingURL=classes.js.map
